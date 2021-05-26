@@ -3,11 +3,20 @@ class Block {
       var options = {
           restitution:0.4
       }
+      this.visiblity= 225; 
       this.body = Bodies.rectangle(x,y,width,height,options);
       this.width=width
       this.height=height
       World.add(world, this.body);
     }
+
+    score(){
+      if(this.visiblity<0 && this.visiblity>-105){
+        score++
+      }
+     
+   };
+
     display(){
       
 
@@ -24,17 +33,12 @@ class Block {
      else{
        World.remove(world, this.body);
        push();
-       this.Visiblity = this.Visiblity - 5;
+       this.visiblity = this.visiblity - 5;
        pop();
      }
     }
    
-   score(){
-     if(this.Visiblity<0 && this.Visiblity>-105){
-       score++
-     }
-    
-  };
+ 
 
 
     }
